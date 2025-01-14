@@ -61,17 +61,17 @@ eksctl version
 ## Create EKS CLUSTER
 
 ```bash
-eksctl create cluster --name=EKS-1 \
+eksctl create cluster --name=DS-EKS \
                       --region=ap-south-1 \
                       --zones=ap-south-1a,ap-south-1b \
                       --without-nodegroup
 
 eksctl utils associate-iam-oidc-provider \
     --region ap-south-1 \
-    --cluster EKS-1 \
+    --cluster DS-EKS \
     --approve
 
-eksctl create nodegroup --cluster=EKS-1 \
+eksctl create nodegroup --cluster=DS-EKS \
                        --region=ap-south-1 \
                        --name=node2 \
                        --node-type=t3.medium \
